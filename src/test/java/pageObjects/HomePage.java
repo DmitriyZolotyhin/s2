@@ -46,7 +46,18 @@ public class HomePage extends PageObject {
     @FindBy(css = "div.active button.btn-primary")
     public WebElementFacade searchButton;
 
-    @FindBy(css = "div.active ul.dropdown-menu li")
+
+
+    ////*[@id="citiesInput"]
+    //@FindBy(css = "div.active ul.dropdown-menu li")   //*[@id="citiesInput"]  //*[@id="citiesInput"]   #citiesInput     .selected > div:nth-child(1)   .selected
+//#EXPEDIA > form > div.col-md-12.col-xs-12.go-text-right.form-group > div > div.easy-autocomplete               #eac-container-citiesInput
+//<span class="select2-chosen">Search by Listing or City Name</span>      //*[@id="citiesInput"] #s2id_autogen8
+
+   //<div class="select2-container hotelsearch locationlisttours" id="s2id_autogen8" style="width: 100%;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice select2-default" tabindex="-1">   <span class="select2-chosen">Search by Listing or City Name</span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow"><b></b></span></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen9"></div>
+//#s2id_autogen8 > a        <a href="javascript:void(0)" onclick="return false;" class="select2-choice select2-default" tabindex="-1">   <span class="select2-chosen">Search by Listing or City Name</span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow"><b></b></span></a>
+    //#select2-drop > div > input    #select2-drop > div > input
+
+    @FindBy(className= "#select2-input")
     public List<WebElementFacade> cityNamesList;
 
     //@FindBy(css = "span.hotel")
@@ -57,10 +68,18 @@ public class HomePage extends PageObject {
     @FindBy(css = "span.flight")
     public WebElementFacade flightsTab;
 
-    @FindBy(css = "span.suitcase")
+
+    //#body-section > div.wow.fadeIn.searchbg.animated > div.RTL_Bar.searcharea > div > ul > li:nth-child(3) > a > span
+    //@FindBy(css = "span.suitcase")
+    @FindBy(css = "#body-section > div.wow.fadeIn.searchbg.animated > div.RTL_Bar.searcharea > div > ul > li:nth-child(3) > a > span")
     public WebElementFacade toursTab;
 
-    @FindBy(css = "span.car")
+
+  //  #body-section > div.wow.fadeIn.searchbg.animated > div.RTL_Bar.searcharea > div > ul > li:nth-child(4) > a > span
+
+   // @FindBy(css = "span.car")
+
+    @FindBy(css = "#body-section > div.wow.fadeIn.searchbg.animated > div.RTL_Bar.searcharea > div > ul > li:nth-child(4) > a > span")
     public WebElementFacade carsTab;
 
     @FindBy(css = "div.dropdown-menu[style*='display: block;'] td.day:not(.disabled)")
@@ -69,21 +88,35 @@ public class HomePage extends PageObject {
     @FindBy(css = "div.active input#adults")
     public WebElementFacade currentAdults;
 
-    @FindBy(css = "div.active input#child")
+
+    //#child
+    //@FindBy(css = "div.active input#child")
+
+    @FindBy(css = "#child")
     public WebElementFacade currentChildren;
 
-    @FindBy(css = "select#tourtype")
+
+
+    //#select2-drop > div > input
+   // @FindBy(css = "select#tourtype")
+    @FindBy(css = "#select2-drop > div > input")
     public WebElementFacade tourTypes;
 
-    @FindBy(css = "div.active select.selectx")
+
+    //#CARS > form > div:nth-child(2) > div:nth-child(2) > select
+    //@FindBy(css = "div.active select.selectx")
+
+    @FindBy(css = "#CARS > form > div:nth-child(2) > div:nth-child(2) > select")
     public List<WebElementFacade> times;
 
-    @FindBy(css = "a.select2-choice")
+    //#s2id_carlocations > a > span.select2-chosen        body > div:nth-child(25) > ul
+   // @FindBy(css = "a.select2-choice")             body > div.select2-drop.select2-display-none.select2-with-searchbox.select2-drop-active > ul
+    @FindBy(css = "body > div.select2-drop.select2-display-none.select2-with-searchbox.select2-drop-active > ul")
     public List<WebElementFacade> carLocations;
 
-    //@FindBy(css = "span.select2-chosen")
-    @FindBy(css = "#s2id_autogen8 > a > span.select2-chosen")
-    //#citiesInput   #citiesInput //*[@id="citiesInput"]          //*[@id="citiesInput"]  #s2id_autogen8 > a > span.select2-chosen  #citiesInput
+    //@FindBy(css = "span.select2-chosen")  #s2id_carlocations2 > a > span.select2-chosen      body > div:nth-child(26) > ul
+    @FindBy(css = "#select2-drop > div > input")
+    //#citiesInput   #citiesInput //*[@id="citiesInput"]         #select2-drop > div > input                                                          //*[@id="citiesInput"]  #s2id_autogen8 > a > span.select2-chosen  #citiesInput
     public WebElementFacade selectedLocation;
 
     public void insertIntoSearchField(int searchId, String value) {

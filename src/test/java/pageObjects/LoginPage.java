@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by testuser on 04/11/16.
+ *
  */
 public class LoginPage extends PageObject {
     private String title = "Login";
